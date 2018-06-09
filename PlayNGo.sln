@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo", "PlayNGo\PlayNGo.csproj", "{771C0510-8D13-41CA-BA2F-9529847D709A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{771C0510-8D13-41CA-BA2F-9529847D709A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771C0510-8D13-41CA-BA2F-9529847D709A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771C0510-8D13-41CA-BA2F-9529847D709A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771C0510-8D13-41CA-BA2F-9529847D709A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {057668E1-587E-494B-891F-86318558D322}
+	EndGlobalSection
+EndGlobal
