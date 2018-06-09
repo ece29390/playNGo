@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo", "PlayNGo\PlayNGo.csproj", "{771C0510-8D13-41CA-BA2F-9529847D709A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo.Models", "PlayNGo.Models\PlayNGo.Models.csproj", "{C36030B7-EB38-4526-AD73-C5AF5291957F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo.Data", "PlayNGo.Data\PlayNGo.Data.csproj", "{E598A838-9919-4C24-BC6C-131463D087F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{771C0510-8D13-41CA-BA2F-9529847D709A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771C0510-8D13-41CA-BA2F-9529847D709A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771C0510-8D13-41CA-BA2F-9529847D709A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36030B7-EB38-4526-AD73-C5AF5291957F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36030B7-EB38-4526-AD73-C5AF5291957F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36030B7-EB38-4526-AD73-C5AF5291957F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36030B7-EB38-4526-AD73-C5AF5291957F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E598A838-9919-4C24-BC6C-131463D087F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E598A838-9919-4C24-BC6C-131463D087F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E598A838-9919-4C24-BC6C-131463D087F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E598A838-9919-4C24-BC6C-131463D087F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
