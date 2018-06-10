@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E598A838-9919-4C24-BC6C-131463D087F5}</ProjectGuid>
+    <ProjectGuid>{DE882878-267B-4F05-B7B7-D8280261C8C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlayNGo.Data</RootNamespace>
-    <AssemblyName>PlayNGo.Data</AssemblyName>
+    <RootNamespace>PlayNGo.Repository</RootNamespace>
+    <AssemblyName>PlayNGo.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,43 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\201806091613585_Initial.cs" />
-    <Compile Include="Migrations\201806091613585_Initial.Designer.cs">
-      <DependentUpon>201806091613585_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806091616564_People_Seed.cs" />
-    <Compile Include="Migrations\201806091616564_People_Seed.Designer.cs">
-      <DependentUpon>201806091616564_People_Seed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806101640056_adding_new_players.cs" />
-    <Compile Include="Migrations\201806101640056_adding_new_players.Designer.cs">
-      <DependentUpon>201806101640056_adding_new_players.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="PersonMap.cs" />
+    <Compile Include="PlayerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\PlayNGo.Common\PlayNGo.Common.csproj">
+      <Project>{2f621f7b-1ccd-49c0-be42-fb7109c86294}</Project>
+      <Name>PlayNGo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlayNGo.Data\PlayNGo.Data.csproj">
+      <Project>{E598A838-9919-4C24-BC6C-131463D087F5}</Project>
+      <Name>PlayNGo.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlayNGo.Models\PlayNGo.Models.csproj">
-      <Project>{c36030b7-eb38-4526-ad73-c5af5291957f}</Project>
+      <Project>{C36030B7-EB38-4526-AD73-C5AF5291957F}</Project>
       <Name>PlayNGo.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806091613585_Initial.resx">
-      <DependentUpon>201806091613585_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806091616564_People_Seed.resx">
-      <DependentUpon>201806091616564_People_Seed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806101640056_adding_new_players.resx">
-      <DependentUpon>201806101640056_adding_new_players.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

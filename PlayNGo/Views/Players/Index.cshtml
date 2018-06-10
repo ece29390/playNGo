@@ -1,0 +1,44 @@
+﻿@model PlayNGo.View.Models.PlayersModel  
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-10">
+            <table style="border-spacing: 50px;">
+               
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                    </tr>
+                
+            @foreach (var item in Model.CurrentListOfPlayers)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m=>item.FirstName)</td>
+                    <td>@Html.DisplayFor(m=>item.LastName)</td>
+                    <td>@Html.DisplayFor(m=>item.PhoneNumber)</td>
+                </tr>
+            }
+            </table>
+           
+        </div>        
+    </div>
+    <div class="row">
+        @ViewBag.Message
+    </div>
+    <div class="row">
+        @Html.ActionLink("Next Page", "NextResult", Model)
+        @Html.ActionLink("Previous Page", "PreviousResult", Model)
+    </div>
+</body>
+</html>
