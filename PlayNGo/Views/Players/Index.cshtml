@@ -11,34 +11,73 @@
     <title></title>
 </head>
 <body>
-    <div class="row">
-        <div class="col-md-10">
-            <table style="border-spacing: 50px;">
-               
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone Number</th>
-                    </tr>
-                
-            @foreach (var item in Model.CurrentListOfPlayers)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(m=>item.FirstName)</td>
-                    <td>@Html.DisplayFor(m=>item.LastName)</td>
-                    <td>@Html.DisplayFor(m=>item.PhoneNumber)</td>
-                </tr>
-            }
-            </table>
-           
-        </div>        
-    </div>
-    <div class="row">
-        @ViewBag.Message
-    </div>
-    <div class="row">
-        @Html.ActionLink("Next Page", "NextResult", Model)
-        @Html.ActionLink("Previous Page", "PreviousResult", Model)
-    </div>
+    @using (Html.BeginForm("ChangeView", "Players", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-10">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                Choose a table style:
+                &nbsp;
+                @Html.DropDownListFor(p => p.SelectedTableStyle, new List<SelectListItem>
+                    {
+                        new SelectListItem{Selected= ViewBag.SelectedStyle=="greenTable",Value="greenTable",Text = "Green Table"}
+                        ,new SelectListItem{Selected= ViewBag.SelectedStyle=="blueTable",Value="blueTable",Text = "Blue Table"}
+                        ,new SelectListItem{Selected= ViewBag.SelectedStyle=="purpleHorizon",Value="purpleHorizon",Text="Purple Horizon" }
+                        ,new SelectListItem{Selected= ViewBag.SelectedStyle=="darkTable", Value="darkTable",Text="Dark Table"}
+                    }, new { id = "ddlTableStyle", onchange = "this.form.submit();" })
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <table id="playersTable" style="border-spacing: 50px;" class="@ViewBag.SelectedStyle">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CurrentListOfPlayers)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(m => item.FirstName)</td>
+                                <td>@Html.DisplayFor(m => item.LastName)</td>
+                                <td>@Html.DisplayFor(m => item.PhoneNumber)</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><b> @ViewBag.Message</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+            @Html.ActionLink("<<", "PreviousResult", Model, !Model.EnablePreviousPage ? (object)new { @class = "linkdisabled" } : new { })
+            &nbsp;
+            @Model.CurrentPage
+
+
+            &nbsp;
+            @Html.ActionLink(">>", "NextResult", Model, !Model.EnableNextPage ? (object)new { @class = "linkdisabled" } : new { })
+
+        </div>
+        @Html.HiddenFor(p => p.CurrentPage)
+        @Html.HiddenFor(p=>p.TotalCount)              
+    }
+
 </body>
 </html>

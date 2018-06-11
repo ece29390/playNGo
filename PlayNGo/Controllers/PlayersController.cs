@@ -22,41 +22,61 @@ namespace PlayNGo.Controllers
         public ActionResult Index()
         {
             var model = new PlayersModel();
+            model.SelectedTableStyle = "greenTable";
             model.TotalCount = _playerBusiness.GetAllPlayersCount();
-
-            var currentPage = model.CurrentPage + 1;
-           
-
-            var list = _playerBusiness.GetByPage(currentPage, PageSize);
-            model.CurrentListOfPlayers = list.ToList();
-           
-            ViewBag.Message = string.Format(DisplayInformationFormat, model.CurrentListOfPlayers.Count, model.TotalCount);
-            model.CurrentPage = currentPage;
-
-            return View(model);
+            model.CurrentPage = 1;
+                                  
+            return Index(model);
         }
-        
-        public ActionResult NextResult(PlayersModel model)
+
+        private ActionResult Index(PlayersModel model)
         {
-            var currentPage = model.CurrentPage + 1;
+            GetPlayers(model, model.CurrentPage);
+            ViewBag.SelectedStyle = model.SelectedTableStyle;
 
-            var list = _playerBusiness.GetByPage(currentPage, PageSize);
-            model.CurrentListOfPlayers = list.ToList();
+            model.EnableNextPage = model.CurrentPage >= 1 && (model.CurrentListOfPlayers.Count==PageSize);
+            model.EnablePreviousPage = model.CurrentPage > 1;
 
-            if (model.CurrentListOfPlayers.Count ==PageSize)
+            if(model.CurrentListOfPlayers.Count == PageSize)
             {
-                ViewBag.Message = string.Format(DisplayInformationFormat, currentPage * PageSize, model.TotalCount);
-                model.CurrentPage = currentPage;
+                SetupMessage(model, model.CurrentPage * 1);
             }
             else
             {
-                ViewBag.Message = string.Format(DisplayInformationFormat, model.TotalCount, model.TotalCount);
+                SetupMessage(model, model.TotalCount);
             }
-           
 
-            return View("Index",model);
+            return View("Index", model);
         }
 
-      
+        private void SetupMessage(PlayersModel model, int currentCount)
+        {
+            ViewBag.Message = string.Format(DisplayInformationFormat, currentCount, model.TotalCount);
+            
+        }
+
+        private void GetPlayers(PlayersModel model, int currentPage)
+        {
+            var list = _playerBusiness.GetByPage(currentPage, PageSize);
+            model.CurrentListOfPlayers = list.ToList();
+        }
+
+        public ActionResult NextResult(PlayersModel model)
+        {
+            model.CurrentPage += 1;
+            return Index(model);
+        }
+
+        public ActionResult PreviousResult(PlayersModel model)
+        {
+            model.CurrentPage -= 1;
+            return Index(model);
+        }   
+        [HttpPost]
+        public ActionResult ChangeView(PlayersModel model)
+        {
+            model.CurrentPage = 1;
+            return Index(model);
+        }
     }
 }
