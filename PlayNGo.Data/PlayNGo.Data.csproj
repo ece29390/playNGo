@@ -61,8 +61,10 @@
       <DependentUpon>201806101640056_adding_new_players.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PersonInitializer.cs" />
     <Compile Include="PersonMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeederHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

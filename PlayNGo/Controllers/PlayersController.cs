@@ -39,7 +39,7 @@ namespace PlayNGo.Controllers
 
             if(model.CurrentListOfPlayers.Count == PageSize)
             {
-                SetupMessage(model, model.CurrentPage * 1);
+                SetupMessage(model, model.CurrentPage * PageSize);
             }
             else
             {

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo.Repository", "PlayN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo.Common", "PlayNGo.Common\PlayNGo.Common.csproj", "{2F621F7B-1CCD-49C0-BE42-FB7109C86294}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNGo.AngularWeb", "PlayNGo.AngularWeb\PlayNGo.AngularWeb.csproj", "{529E90BA-69C8-447C-A1CA-DB44C42976ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2F621F7B-1CCD-49C0-BE42-FB7109C86294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F621F7B-1CCD-49C0-BE42-FB7109C86294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F621F7B-1CCD-49C0-BE42-FB7109C86294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529E90BA-69C8-447C-A1CA-DB44C42976ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529E90BA-69C8-447C-A1CA-DB44C42976ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529E90BA-69C8-447C-A1CA-DB44C42976ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529E90BA-69C8-447C-A1CA-DB44C42976ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

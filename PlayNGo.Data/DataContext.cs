@@ -12,7 +12,7 @@ namespace PlayNGo.Data
     {
         public DataContext() : base("name=PlayNGoConnectionString")
         {
-          
+            Database.SetInitializer(new PersonInitializer());
         }
 
         public DbSet<Person> Persons { get; set; }

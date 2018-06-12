@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+    <title>PlayNGo Take Home Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    
+
+    <script src="~/SPA/Controller/MainController.js"></script>
+    <script src="~/SPA/App.js"></script>
+
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-app="App" ng-controller="MainController">
+        <div class="navbar navbar-expand-lg navbar-light bg-light" id="navbarCollapse">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Table Style:
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" ng-repeat="x in models.tabletemplates" ng-click="changeTemplate(x)" href="#" id="greenTable">{{x.Template}}</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <table id="playersTable" scope- style="border-spacing: 50px;" class="{{models.selectedStyle}}">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in models.currentPlayers">
+                            <td>{{x.FirstName}}</td>
+                            <td>{{x.LastName}}</td>
+                            <td>{{x.PhoneNumber}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><b> {{models.displayInformation}}</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <a href="#" class="{{models.previousPageClassName}}" ng-click="goBack()"><<</a>
+                &nbsp;
+                {{models.currentPage}}
+                &nbsp;
+                <a href="#" class="{{models.nextPageClassName}}" ng-click="goNext()">>></a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+
