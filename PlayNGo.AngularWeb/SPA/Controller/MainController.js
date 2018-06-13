@@ -2,8 +2,7 @@
     $scope.models = {
         tabletemplates: [
             { id:"greenTable", Template:"Green Table" }
-            , { id:"blueTable", Template:"Blue Table" }
-            , { id:"purpleHorizon", Template:"Purple Horizon" }
+            , { id:"blueTable", Template:"Blue Table" }            
             , { id:"darkTable", Template:"Dark Table" }
         ]
         , totalCount: 0
